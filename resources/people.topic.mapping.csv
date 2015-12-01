@@ -1,0 +1,79 @@
+People,Basic Count/Estimate,Civilian Population
+People,Basic Count/Estimate,Group Quarters Population
+People,Basic Count/Estimate,Household & Family
+People,Basic Count/Estimate,Overseas Population
+People,Basic Count/Estimate,Population Change
+People,Basic Count/Estimate,Population in Housing Units
+People,Basic Count/Estimate,Population Total
+People,Basic Count/Estimate,Resident Population
+People,Basic Count/Estimate,Urban/Rural
+People,Age & Sex,Age
+People,Age & Sex,Age of Householder
+People,Age & Sex,Sex
+People,Age Group,Children
+People,Age Group,Older Population
+People,Age Group,Teenager
+People,Disability,Disability
+People,Disability,Mobility
+People,Disability,Self-Care Limitations
+People,Disability,Work Disability Status
+People,Education,Educational Attainment
+People,Education,Field of Degree
+People,Education,School Enrollment
+People,Education,School Type
+People,Education,Vocational Training
+People,Employment,Benefits
+People,Employment,Class of Worker
+People,Employment,Commuting (Journey to Work)
+People,Employment,Employment (Labor Force) Status
+People,Employment,Industry
+People,Employment,Occupation
+People,Employment,Part/Full-Time Work Status
+People,Employment,Place of Work
+People,Employment,Subsistence Activity
+People,Employment,Work Disability Status
+People,Employment,Means of Transportation
+People,Income & Earnings,Income/Earnings (Households)
+People,Income & Earnings,Income/Earnings (Individuals)
+People,Income & Earnings,Remittances Sent Abroad
+People,Insurance Coverage,Homeowners/Renters Insurance
+People,Insurance Coverage,Direct-Purchase Health Insurance
+People,Insurance Coverage,Health Insurance
+People,Language,English Usage
+People,Language,Language Spoken at Home
+People,Marital & Fertility Status,Fertility
+People,Marital & Fertility Status,Marital History
+People,Marital & Fertility Status,Marital Status
+People,Origins,Ancestry
+People,Origins,Citizenship
+People,Origins,Foreign Born
+People,Origins,Hispanic or Latino
+People,Origins,Migration (International/Domestic)
+People,Origins,Migration (Previous Residence)
+People,Origins,Native Born
+People,Origins,Place of Birth
+People,Origins,Race or Ethnic Origin
+People,Origins,Year of Entry
+People,Population Change,Births
+People,Population Change,Deaths
+People,Population Change,Migration (International/Domestic)
+People,Population Change,Migration (Previous Residence)
+People,Population Change,Reason for Migration
+People,Population Change,Population Change
+People,Poverty,Food Stamps/SNAP
+People,Poverty,Heating and Cooling Assistance
+People,Poverty,Poverty
+People,Relationship,Caregiver
+People,Relationship,Family
+People,Relationship,Family Type
+People,Relationship,Fertility
+People,Relationship,Grandparent
+People,Relationship,Household Relationship
+People,Relationship,Household Size
+People,Relationship,Household Type
+People,Relationship,Marital Status
+People,Relationship,Own Children
+People,Relationship,Unmarried Partner
+People,Veterans,Military Dependents
+People,Veterans,Service Connected Disability
+People,Veterans,Veteran Status

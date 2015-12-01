@@ -1,0 +1,20 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class='row'>
+       <div class='col-xs-1 verticallyCentered'>
+                      <img class='' ng-src='images/logo.png' />
+       </div>
+        <div class='col-xs-3 verticallyCentered'>
+            <a ng-href='#/'><h3>Census Data Search</h3></a>
+        </div>
+        <div class='col-xs-8 '>
+            <ul class="nav nav-tabs">
+                <li role="presentation" ng-class="{'active' : selected=='results'}"><a ng-click='selected="results"' ng-href="#/results/keyword=&location=&offset=25"><span class='glyphicon-search glyphicon'></span>&nbsp;Faceted Results</a>
+                </li>
+                <li role="presentation" ng-class="{'active' : selected=='map'}"><a ng-click='selected="map"' ng-href="#/map/keyword=&location=&offset=25"><span class='glyphicon glyphicon-map-marker'></span>&nbsp;Map Search</a>
+                </li>
+                <li role="presentation" ng-class="{'active' : selected=='fsearch' }"><a ng-click='selected="fsearch"' ng-href="#/"><span class='glyphicon glyphicon-screenshot'></span>&nbsp;Force Graph Search</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

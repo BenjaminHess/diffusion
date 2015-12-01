@@ -1,0 +1,19 @@
+{
+    "query": {
+        "filtered": {
+            "filter": {
+                "regexp": {
+                    "label": "plumb[a-z]*"
+                }
+            }
+        }
+    },
+    "aggs" : {
+        "outer" : {
+            "terms" : {
+                "field" : "naicsID",
+                "size" : 0
+            }
+        }
+    }
+}

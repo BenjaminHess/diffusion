@@ -1,0 +1,66 @@
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "bool": {
+          "should": [
+            {
+              "query_string": {
+                "query": "\"PLACE OF BIRTH\" AND \"THE FOREIGN-BORN POPULATION\""
+              }
+            }
+          ]
+        }
+      },
+      "filter": {
+        "bool": {
+          "must_not": [
+            {
+              "fquery": {
+                "query": {
+                  "query_string": {
+                    "query": "label.dimensions:(\"Margin of Error for\")"
+                  }
+                },
+                "_cache": true
+              }
+            }
+          ],
+          "must": [
+            {
+              "fquery": {
+                "query": {
+                  "query_string": {
+                    "query": "geoName:(\"Waukesha County, Wisconsin\")"
+                  }
+                },
+                "_cache": true
+              }
+            },
+            {
+              "fquery": {
+                "query": {
+                  "query_string": {
+                    "query": "asia"
+                  }
+                },
+                "_cache": true
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "highlight": {
+    "fields": {},
+    "fragment_size": 2147483647,
+    "pre_tags": [
+      "@start-highlight@"
+    ],
+    "post_tags": [
+      "@end-highlight@"
+    ]
+  },
+  "size": 500
+}

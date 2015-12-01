@@ -1,0 +1,15 @@
+.circle-stat .con {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100px;
+}
+
+.circle-stat .title {
+	display: inline-block;
+	float: left;
+}
+
+.widget .icon-btn .badge {
+	padding-top: 3px;
+	right: -10px;
+}

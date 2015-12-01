@@ -1,0 +1,55 @@
+{
+    "settings": {
+        "index": {
+            "analysis": {
+                "analyzer": {
+                    "dim_pattern_analyzer": {
+                        "flags": "CASE_INSENSITIVE",
+                        "lowercase": "true",
+                        "pattern": "\\s+BY\\s+|\\s+FOR\\s+|:?!!|\\s*\\(\\s*|\\)\\s*|\\.\\s+",
+                        "type": "pattern"
+                    },
+                    "ngram_analyzer": {
+                        "filter": [
+                            "lowercase",
+                            "asciifolding",
+                            "ngram_filter"
+                        ],
+                        "tokenizer": "whitespace",
+                        "type": "custom"
+                    },
+                    "shingle_analyzer": {
+                        "filter": [
+                            "lowercase",
+                            "shingle_filter"
+                        ],
+                        "tokenizer": "standard",
+                        "type": "custom"
+                    },
+                    "stem_analyzer": {
+                        "filter": "lowercase",
+                        "language": "English",
+                        "type": "snowball"
+                    }
+                },
+                "filter": {
+                    "ngram_filter": {
+                        "max_gram": "16",
+                        "min_gram": "1",
+                        "side": "front",
+                        "type": "edgeNGram"
+                    },
+                    "shingle_filter": {
+                        "max_shingle_size": "3",
+                        "min_shingle_size": "3",
+                        "output_unigrams": "false",
+                        "type": "shingle"
+                    }
+                }
+            },
+            "number_of_replicas": "1",
+            "number_of_shards": "5",
+            "refresh_interval": "5s"
+        }
+    }
+}

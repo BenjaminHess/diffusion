@@ -1,0 +1,380 @@
+body {
+	margin: 0;
+	font-family: "Arial";
+	color: #666;
+}
+
+header {
+	background: #01174c;
+	background-image: url("img/header-bg.png");
+	background-repeat: no-repeat;
+	background-size: 100% 113px;
+	height: 113px;
+}
+
+h2 {
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+#logo {
+	display: inline-block;
+	height:53px;
+	font-family: "Avenir Next";
+	font-size: 32px;
+	font-weight: 500;
+	background-image: url("img/logo.png");
+	background-repeat: no-repeat;
+	color: #000c65;
+	text-align: center;
+	margin-left: 15%;
+	margin-top: 35px;
+	padding-top: 5px;
+	text-indent: 78px;
+	text-shadow: -1px 3px 5px rgba(0,0,0,0.25);
+}
+
+#main {
+}
+
+/* Navigation */
+
+#navigation {
+	font-size: 0.8em;
+	margin: 0;
+	padding: 10px 0;
+	border-top: 1px solid rgba(226,226,226,1);
+	border-bottom: 1px solid rgba(226,226,226,1);
+	background: #ffffff;
+	background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 85%, rgba(226,226,226,1) 100%);
+}
+
+#navigation a {
+	text-decoration: none;
+	color: #017297;
+	font-weight: 600;
+	font-size: 13px;
+	font-family: "PT Sans";
+}
+
+#navigation li:first-child {
+	margin-left: 20%;
+}
+
+#navigation li {
+	display: inline-block;
+	list-style: none;
+	margin-right: 15px;
+}
+
+/* Intro */
+
+#intro {
+	display: block;
+	margin: 30px auto 0;
+	border: 1px solid #dedede;
+	padding: 10px 20px;
+	width: 680px;
+}
+
+#intro-desc {
+	font-family: "Lucida Grande";
+	font-size: 14px;
+}
+
+/* Results */
+
+#results {
+	padding: 20px;
+	vertical-align: top;
+}
+
+#results-showing {
+	margin-bottom: 10px;
+}
+
+.results-moduleBody {
+	display: none;
+	padding: 10px 10px 10px 20px;
+}
+
+.results-moduleBody th {
+	padding: 5px 0;
+}
+
+.results-moduleBody td a {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.results-moduleBody td:first-child, .results-moduleBody th:first-child {
+	text-align: left;
+}
+.results-moduleBody td:first-child div {
+	text-indent: 2em;
+}
+.results-moduleBody td, .results-moduleBody th {
+	text-align: center;
+	padding: 2px 0;
+	font-size: 0.9em;
+}
+
+.results-moduleBody a {
+	color: #2676a1;
+	text-decoration: none;
+}
+
+.defaultView {
+	display: block;
+}
+
+.moduleHeader {
+	color: #fff;
+	padding: 4px 0 4px 24px;
+	font-size: 0.8em;
+	font-weight: 500;
+	background: #029bcb;
+	height: 18px;
+	line-height: 18px;
+	margin: 10px 0;
+}
+
+.results-pagination {
+	width: 100%;
+	height: 18px;
+}
+
+.results-pagination {
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	text-align: center;
+	padding: 10px 0;
+}
+.results-pagination li {
+	list-style: none;
+	padding: 0 5px;
+}
+.results-pagination li a {
+	text-decoration: none;
+	color: #666;
+	font-size: 0.8em;
+}
+.results-pagination li.prev {
+	float: left;
+	margin-left: 5px;
+}
+.results-pagination li.next {
+	float: right;
+	margin-right: 5px;
+}
+
+.results-pagination li.prev a, .results-pagination li.next a, .results-pagination li.current a
+{
+	color: #383838;
+	font-weight: bold;
+}
+
+/* Search elements */
+
+.input-searchType {
+	display: inline-block;
+	margin: 10px 20px 10px 0px;
+}
+
+.input-searchType input {
+	width: 260px;
+	height: 26px;
+	font-size: 12px;
+	padding-left: 10px;
+}
+
+#input-search {
+	margin-bottom: 20px;
+}
+
+#input-searchButton, #input-saveButton {
+	margin: 10px 0;
+	border: none;
+	background: #0a3d7a;
+	color: #ffffff;
+	font-size: 14px;
+	padding: 5px;
+	width: 100px;
+	height: 35px;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: left;
+	padding: 30px 20px 20px 40px;
+	border-right: 1px solid #dedede;
+	box-sizing: border-box;
+}
+
+.sidebar-checkboxes {
+	margin-top: 5px;
+}
+
+.sidebar-checkboxes label,
+#input-search label{
+	font-size: 0.9em;
+	vertical-align: middle;
+	color: #898989;
+}
+
+.sidebar-refineSection {
+	margin-bottom: 20px;
+}
+
+#sidebar a {
+	font-size: 0.75em;
+	text-decoration: none;
+	color: #029bcb;
+}
+
+.sidebar-checkboxes input[type="checkbox"], #input-search input[type="checkbox"] {
+	display: none;
+}
+.sidebar-checkboxes input[type="checkbox"]:not(:checked) + label.box,
+#input-search input[type="checkbox"]:not(:checked) + label.box{
+	display: block;
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	border: #acacac solid 1px;
+	margin-top: 2px;
+	margin-right: 10px;
+}
+.sidebar-checkboxes input[type="checkbox"]:checked + label.box,
+#input-search input[type="checkbox"]:checked + label.box{
+	display: block;
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	border: #acacac solid 1px;
+	background: url('img/check.png') 1px 2px no-repeat;
+	margin-right: 10px;
+}
+
+.boxName {
+	display:block;
+	margin-left: 20px;
+}
+
+.sidebar-checkboxDiv {
+	margin: 4px 0;
+}
+
+/* Map Div */
+
+#mapContainer {
+	width: 800px;
+	height: 500px;
+	margin-bottom: 20px;
+}
+
+/* Loading Div */
+.loadingDiv img {
+	display: block;
+	margin: 0 auto;
+}
+
+/* Misc Class Styling */
+
+.blueTitle {
+	display: inline-block;
+	color: #043777;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.blueSubTitle {
+	font-weight: bold;
+	color: #043777;
+	font-size: 0.9em;
+}
+
+.cyanTitle {
+	display: inline-block;
+	color: #029bcb;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.cyanSubTitle {
+	font-weight: bold;
+	color: #029bcb;
+	font-size: 0.9em;
+}
+
+.upper {
+	text-transform: uppercase;
+}
+
+.icon {
+	position: relative;
+	left: -16px;
+	display: inline-block;
+}
+
+.opentip-container {
+	max-width: 500px!important;
+}
+
+#navigation .currentPage a {
+	color: #000c65;
+}
+
+/* Requirements to show county map*/
+path
+{
+	stroke:white;
+	stroke-width: 1px;
+}
+
+body
+{
+	font-family: Verdana, Tahoma, Arial, sans-serif;
+}
+
+.city
+{
+	font: 8pt Verdana, Tahoma;
+	font-weight: bold;
+}
+
+.states
+{
+	fill: none;
+	stroke: #6699FF;
+	stroke-linejoin: round;
+}
+
+#key
+{
+	font: 8pt Verdana, Tahoma;
+}
+
+.legend
+{
+	font: 8pt Verdana, Tahoma;
+}
+
+div.tooltip
+{
+	position: absolute;
+	text-align: left;
+	padding: 2px;
+    color:black;
+	font: 8pt Tahoma, Verdana;
+	background: rgba(2, 155, 203, 0.75);
+	border:10px;
+    border-color: #000000;
+	border-radius: 4px;
+	pointer-events: none;
+}
+div.tooltip hr{
+    padding: 0px;
+    margin: 0px;    
+  }

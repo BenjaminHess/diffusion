@@ -1,0 +1,33 @@
+{
+    "query": {
+        "filtered": {
+            "filter": {
+                "and": [
+                    {
+                        "term": {
+                            "label": "plumbers"
+                        }
+                    },
+                    {
+                        "term": {
+                            "geo_state": 51
+                        }
+                    },
+                    {
+                        "term": {
+                            "geo_summary_level_name": "county"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "aggs": {
+        "outer": {
+            "terms" : {
+                "field" : "geo_fips",
+                "size" : 0
+            }
+        }
+    }
+}

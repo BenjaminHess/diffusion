@@ -1,0 +1,43 @@
+<div class='row'>
+    <div class='col-xl-12'>
+        <h2>The Diffusion Search Experience Begins Here</h2>
+        <div class='form-group jumbotron'>
+            <div class='row '>
+               <p class='text-muted' style='font-size:large'>Using sarch modifers such as AND and OR will enable you to compelling complex results.</p>
+                <div class='col-xs-6'>
+                    <label for="keyword">Enter a Keyword:</label>
+                    <input type="text" class="form-control" id="keyword" name='keyword' ng-model='keyword' placeholder='Search by Keywords' />
+                </div>
+                <div class='col-xs-6'>
+                    <label for="Location">Enter a Location:</label>
+                    <input type="location" class="form-control" id="location" name='location' ng-model='location' placeholder='Search by City, State or Zip' />
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+<!--
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <accordion>
+                        <accordion-group is-open="status.open">
+                            <accordion-heading>
+                                Advanced Search Modifiers <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                            </accordion-heading>
+                            Coming Soon!
+                        </accordion-group>
+                </div>
+            </div>
+            <hr>
+-->
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <a ng-href="#/results/keyword={{keyword}}&location={{location}}&offset=0">
+                        <button class="btn btn-success " ng-click='addSubmit();'><span class='glyphicon glyphicon-search'></span> Search</button>
+                    </a>
+                    <button class="btn btn-danger" ng-click='keyword="";location=""'><span class='glyphicon glyphicon-minus-sign'></span> Reset Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

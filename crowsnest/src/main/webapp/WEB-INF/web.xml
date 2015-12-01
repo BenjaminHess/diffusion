@@ -1,0 +1,55 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>CrowsNest</display-name>
+  <welcome-file-list>
+     <welcome-file>redesign.html</welcome-file> 
+  </welcome-file-list>
+  
+   <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Protected resource</web-resource-name>
+      <url-pattern>/*</url-pattern>
+      <http-method>GETLIB</http-method>
+      <http-method>COPY</http-method>
+      <http-method>MOVE</http-method>
+      <http-method>DELETE</http-method>
+      <http-method>PROPFIND</http-method>
+      <http-method>GET</http-method>
+      <http-method>HEAD</http-method>
+      <http-method>PUT</http-method>
+      <http-method>MKCOL</http-method>
+      <http-method>PROPPATCH</http-method>
+      <http-method>LOCK</http-method>
+      <http-method>UNLOCK</http-method>
+      <http-method>VERSION-CONTROL</http-method>
+      <http-method>CHECKIN</http-method>
+      <http-method>CHECKOUT</http-method>
+      <http-method>UNCHECKOUT</http-method>
+      <http-method>REPORT</http-method>
+      <http-method>UPDATE</http-method>
+      <http-method>CANCELUPLOAD</http-method>
+    </web-resource-collection>
+
+    <auth-constraint>
+      <role-name>cyberng-user</role-name>
+    </auth-constraint>
+    
+    <!-- https -->
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  
+  <security-role>
+    <role-name>cyberng-user</role-name>
+  </security-role>
+    
+  <login-config>
+    <auth-method>DIGEST</auth-method>
+    <realm-name>Digest</realm-name>
+  </login-config>
+  
+</web-app>

@@ -1,0 +1,34 @@
+{
+    "query": {
+        "filtered": {
+            "filter": {
+                "bool": {
+                    "must": {
+                        "regexp": {
+                            "label": "plumb[a-z]*"
+                        }
+                    },
+                    "should": {
+                        "term": {
+                            "geo_state": 11
+                        },
+                        "term": {
+                            "geo_state": 24
+                        },
+                        "term": {
+                            "geo_state": 51
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "aggs" : {
+        "outer" : {
+            "terms" : {
+                "field" : "naicsID",
+                "size" : 0
+            }
+        }
+    }
+}

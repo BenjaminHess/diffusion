@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="./jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <link rel="stylesheet" type="text/css" href="style/jquery-datatables.css">
+    <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
+</head>
+<body>
+<div id="wrapper">
+
+    <div id="container">
+<form action="javascript:submit()">
+                <input id="queryId" type="hidden"/>
+                <fieldset class="third left">
+                    <legend>Datasets</legend>
+                    
+                    <div>
+                        <div class="label"><label>Netflow:</label></div>
+                        <input id="checkBox_Netflow" name="checkBox_Netflow" type="checkBox"/>
+                        <div style="clear: both"></div>
+                        <div class="label"><label>DNS:</label></div>
+                        <input id="checkBox_DNS" name="checkBox_DNS" type="checkBox"/>
+                        <div style="clear: both"></div>
+                        <div class="label"><label>Webproxy:</label></div>
+                        <input id="checkBox_Webproxy" name="checkBox_Webproxy" type="checkBox"/>
+                        <div style="clear: both"></div>
+                    </div>
+                </fieldset>
+                <fieldset class="third left">
+                    <legend>Date/Time</legend>
+                    
+                    <div>
+                        <div class="label">
+                            <label>Start Date:</label>
+                        </div>
+                        <input id="startDate" name="startDate" type="text"/>
+                        <div class="label">
+                            <label>Start Time:</label>
+                        </div>
+                        <input id="startTime" name="startTime" type="text"/>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div>
+                        <div class="label">
+                            <label>End Date:</label>
+                        </div>
+                        <input id="endDate" name="endDate" type="text"/>
+                        <div class="label">
+                            <label>End Time:</label>
+                        </div>
+                        <input id="endTime" name="endTime" type="text"/>
+                        <div class="label"><label>Continuous:</label></div>
+                        <input id="checkBox_Continuous" name="checkBox_Continuous" type="checkBox"/>
+                    </div>
+                </fieldset>
+                <fieldset class="third left">
+                    <legend>Host 1</legend>
+                    <div>
+                        <div class="label">
+                            <label>IP:</label>
+                        </div>
+                        <input id="host1IP" name="host1IP" type="text"/>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div>
+                        <div class="label">
+                            <label>Port:</label>
+                        </div>
+                        <input id="host1Port" name="host1Port" type="text"/>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div>
+                    <div class="label"><label>To:</label></div>
+                    <input id="checkBox_Direction_To" name="checkBox_Direction_To" type="checkBox"/>
+                    </div>
+                    <div>
+                    <div class="label"><label>From:</label></div>
+                    <input id="checkBox_Direction_From" name="checkBox_Direction_From" type="checkBox"/>
+                    </div>
+                    <div style="clear: both"></div>
+                </fieldset>
+                <fieldset class="third left">
+                    <legend>Host 2</legend>
+                    <div>
+                        <div class="label">
+                            <label>IP:</label>
+                        </div>
+                        <input id="host2IP" name="host2IP" type="text"/>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div>
+                        <div class="label">
+                            <label>Port:</label>
+                        </div>
+                        <input id="host2Port" name="host2Port" type="text"/>
+                        <div style="clear: both"></div>
+                    </div>
+                </fieldset>
+                
+
+                <div id="button-bar">
+                    <input type="submit" value="SEARCH"/>
+                </div>
+            </form>
+        </div>
+
+
+        <button id="disconnect">Query</button>
+        <div class="tabs">
+    <a data-toggle="tab1">Netflow</a>
+    <a data-toggle="tab2">Firewall</a>
+    <a data-toggle="tab3">DNS</a>
+  </div>
+<div class="tabContent">  
+  <div id="tab1">
+     <div id="TableContainer1"></div>
+  </div>
+  <div id="tab2">
+     <div id="TableContainer2"></div>
+  </div>
+  <div id="tab3">
+     <div id="TableContainer3"></div>
+  </div>
+</div>
+</div>
+
+  <ul class="tabs">
+    <li><a href="Netflow">Netflow</a></li>
+    <li><a href="Firewall">Firewall</a></li>
+    <li><a href="DNS">DNS</a></li>
+  </ul>
+  <div class="clr"></div>
+  <div id="TableContainer"></div>
+
+<script src="./client.js"></script>
+</body>
+</html>

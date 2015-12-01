@@ -1,0 +1,233 @@
+@import url('font/pts.css');
+
+body {
+	margin:			0px;
+	padding:		0px;
+	font-family:	'pt_sans';
+	background:		#cccccc;
+}
+
+legend {
+	color: #FFFFFF;
+}
+h2 {
+	margin-top:		0px;
+}
+
+td {
+	border:			1px solid #cccccc;
+}
+td.noBoarder {
+	border:			0px solid #cccccc;
+}
+th {
+	border:			1px solid #222222;
+}
+
+table {
+	width:			100%;
+	line-height:	1.5em;
+	font-size:		13px;
+	border-collapse:collapse;
+}
+
+thead {
+	color:			#eeeeee;
+	background:		#333333;
+}
+
+input[type=submit] {
+	padding:		10px 20px;
+	cursor:			pointer;
+	border:			none;
+	background:		#f64b00;
+	color:			#eeeeee;
+	font-size:		12px;		
+	font-weight:	bold;
+}
+
+fieldset {
+	border:			1px solid #cccccc;
+	font:90%/1 sans-serif;
+	width: 230px;
+	padding-top: 10px;
+}
+
+.wrapper {
+  background: white;
+  margin: auto;
+  padding: 1em;
+  width: 50%;
+}
+h1 {
+  text-align: center;
+}
+ul.tabs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.tabs li {
+  border: gray solid 1px;
+  border-bottom: none;
+  float: left;
+  margin: 0 .25em 0 0;
+  padding: .25em .5em;
+  white-space: nowrap;
+}
+ul.tabs li a {
+  color: gray;
+  font-weight: bold;
+  text-decoration: none;
+}
+ul.tabs li.active {
+  background: gray;
+}
+ul.tabs li.active a {
+  color: white;
+}
+.clr {
+  clear: both;
+}
+article {
+  border-top: gray solid 1px;
+  padding: 0 1em;
+}
+
+.dataTables_info {
+	color: #FFFFFF;
+}
+
+#header {
+	font-size:		10px;
+	text-align:		center;
+	margin-bottom:	40px;
+	background:		#333333;
+	color:			#eeeeee;
+}
+
+#logo {
+	display:		block;
+	margin-bottom:	20px;
+}
+
+#logo-box {
+	margin:			0px auto;
+	width:			1200px;
+}
+
+#form-box,
+#results-box,
+#unique-box {
+	margin:			0px auto 40px auto;
+	padding:		20px;
+	width:			1200px;
+	border:			1px solid #777777;
+	box-shadow:		rgba(0, 0, 0, 0.2) 0px 2px 4px 1px;
+	border-radius:	5px;
+	background:		#f3f3f3;
+	background:		-webkit-linear-gradient(top, #ffffff, #e0e0e0);
+}
+
+#unique-box {
+	display:		none;
+}
+
+#chart-box {
+	display:		none;
+	margin:			0px auto 40px auto;
+	width:			1240px;
+	height:			300px;
+}
+
+#button-bar {
+	margin-top:		20px;
+	text-align:		center;
+}
+
+#ui-datepicker-div {
+	font-size:		12px;
+	line-height:	1em;
+}
+
+#overlay {
+	display:		none;
+	position:		fixed;
+	top:			0px;
+	bottom:			0px;
+	left:			0px;
+	right:			0px;
+	z-index:		100;
+	background:		rgba(0, 0, 0, 0.25);
+}
+
+#overlay img {
+	position:		relative;
+	z-index:		200;
+	left:			50px;
+	top:			15px;
+}
+
+#popup {
+	position:		fixed;
+	top:			5%;
+	bottom:			5%;
+	left:			5%;
+	right:			5%;
+	line-height:	1.5em;
+	padding:		20px;	
+	background:		#f5f5f5;
+	overflow:		scroll;
+}
+
+#slider {
+	display:		none;
+	position:		fixed;
+	z-index:		200;
+	line-height:	1.2em;
+	padding:		5px 20px;
+	font-size:		12px;
+	height:			60px;
+	bottom:			0px;
+	background:		#333333;
+	color:			#eeeeee;
+}
+
+.label {
+	float:			left;
+	width:			80px;
+}
+
+.even {
+	background:		#ffffff;
+}
+
+.odd {
+	background:		#ffffff;
+}
+
+.third {
+	float:			left;
+	width:			250px;
+}
+
+.middle {
+	margin:			0px 10px;
+}
+
+.paginate_disabled_previous,
+.paginate_disabled_next {
+	color:			#777777;
+}
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }

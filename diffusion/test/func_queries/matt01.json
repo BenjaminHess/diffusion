@@ -1,0 +1,34 @@
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "bool": {
+          "should": [
+            {
+              "query_string": {
+                "query": "\"Number of Establishments\" AND naicsID:713940 AND geo_within_state:California AND geo_summary_level_name:County"
+              }
+            }
+          ]
+        }
+      },
+      "filter": {
+        "bool": {
+          "must_not": [
+            {
+              "fquery": {
+                "query": {
+                  "query_string": {
+                    "query": "label.dimensions:(\"Margin of Error for\")"
+                  }
+                },
+                "_cache": true
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "size": 500
+}

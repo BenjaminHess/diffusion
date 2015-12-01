@@ -1,0 +1,32 @@
+'{\
+  "Netflow": { "fields" : \
+["SrcIp","SrcPort","DstIp","DstPort","Next Hop","FlowStartTime","FlowEndTime", \
+ "PacketCount","Layer_3_Bytes","SrcIp-GeoLocation","DstIp-GeoLocation"], \
+  "alert_fields" : {"ip":"SrcIp,DstIp","port":"SrcPort"}, \
+  "aoColumns": [ \
+  { "mDataProp": "SrcIp", "bSortable": true, "sType": "ip-address" , "bFilter": true}, \
+  { "mDataProp": "SrcPort","bSortable": true, "sType": "numeric" , "bFilter": true}, \
+  { "mDataProp": "DstIp","bSortable": true, "sType": "ip-address" , "bFilter": true}, \
+  { "mDataProp": "DstPort","bSortable": true, "sType": "numeric" , "bFilter": true}, \
+  { "mDataProp": "Next Hop","bSortable": true,"sType": "ip-address" , "bFilter": true},\
+  { "mDataProp": "FlowStartTime","bSortable": true,"sType": "date", "bFilter": true },\
+  { "mDataProp": "FlowEndTime","bSortable": true,"sType": "date" , "bFilter": true},\
+  { "mDataProp": "PacketCount","bSortable": true,"sType": "numeric" , "bFilter": true},\
+  { "mDataProp": "Layer_3_Bytes","bSortable": true,"sType": "numeric" , "bFilter": true},\
+  { "mDataProp": "SrcIp-GeoLocation","bSortable": true,"sType": "string" , "bFilter": true},\
+  { "mDataProp": "DstIp-GeoLocation","bSortable": true,"sType": "string" , "bFilter": true}\
+  ]},\
+ "DNS": { "fields" : \
+["enriched-ipAndPort-splitIp","enriched-ipAndPort-splitPort","ip","dnsPort","destinationDns",\
+"enriched-ipAndPort-splitIp-GeoLocation", "ip-GeoLocation"], \
+  "alert_fields" : {"ip":"SrcIp,DstIp","port":"SrcPort"}, \
+  "aoColumns": [ \
+  { "mDataProp": "enriched-ipAndPort-splitIp", "bSortable": true, "sType": "ip-address" , "bFilter": true}, \
+  { "mDataProp": "enriched-ipAndPort-splitPort","bSortable": true, "sType": "numeric" , "bFilter": true}, \
+  { "mDataProp": "ip","bSortable": true, "sType": "ip-address" , "bFilter": true}, \
+  { "mDataProp": "dnsPort","bSortable": true, "sType": "numeric" , "bFilter": true}, \
+  { "mDataProp": "destinationDns","bSortable": true,"sType": "string" , "bFilter": true},\
+  { "mDataProp": "enriched-ipAndPort-splitIp-GeoLocation","bSortable": true,"sType": "string" , "bFilter": true},\
+  { "mDataProp": "ip-GeoLocation","bSortable": true,"sType": "string" , "bFilter": true}\
+  ]}\
+}'

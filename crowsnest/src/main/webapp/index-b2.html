@@ -1,0 +1,295 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="srcApp" ng-controller="ClientCtrl"> <!--<![endif]-->
+<head>
+    <script src="./jquery.js"></script>
+    <script src="./jquery.dataTables.js"></script>
+    <script src="./jquery.datetimepicker.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    
+    <!-- <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/clients.css" />
+    <link rel="stylesheet" href="style/modal.css" />  -->
+    
+    <link rel="stylesheet" type="text/css" href="style/jquery-datatables.css">
+    <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="style/jquery.datetimepicker.css"/ >
+    
+    <style  type="text/css">
+    body {
+        padding-top: 38px; /* Whatever the height of your navbar is; the
+                             default is 50px */
+        padding-left: 10px;
+        margin-left: 20px;
+        background-color:#222222;
+    }
+    
+    /* body container */
+.imgback {  
+  margin-top: 0px;
+  /* margin-left: 215px; */ 
+  min-height: 800px;    
+  background: #f7f7f7 url("images/body-bg.png"); 
+  border-bottom: 2px solid #ddd;
+}
+    
+    .search_init{
+        width: 120px;
+    }
+    
+    .container  .content {
+      background-color: #cccccc;
+      padding: 20px;
+      margin: 0 -20px; 
+      -webkit-border-radius: 10px 10px 10px 10px;
+      -moz-border-radius: 10px 10px 10px 10px;
+      border-radius: 10px 10px 10px 10px;
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    }
+    
+    .navbar-inverse .navbar-brand {
+       color: #3a87ad;;
+    }
+    
+    .hdiv { list-style: none; margin: 1px;}
+
+    #clock {
+      color : white;
+      text-align:right;
+    }
+
+    .label {
+       color: #428bca; /* --blue */
+       background-color: #222222;
+    }
+    label.label {
+      font-weight: normal;
+      font-size: 14px;
+    }
+
+    .bgwhite {
+      background-color:white;
+    }
+ 
+    #loading-indicator {
+      position: relative;
+      left: 10px;
+      top: 0px;
+     }
+
+    
+    
+
+    </style>
+    <title>CrowsNest</title>
+</head>
+<body class="ex_highlight_row">
+   <!-- BEGIN HEADER -->
+   <div id="header" class="navbar navbar-inverse navbar-fixed-top">
+      <!-- BEGIN TOP NAVIGATION BAR -->
+      <div class="navbar-inner">
+         <div class="container-fluid">
+            <!-- BEGIN LOGO -->
+            <a class="brand" href="/#/">C4S</a>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a class="btn btn-navbar collapsed" id="main_menu_trigger" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="arrow"></span>
+            </a>
+            <!-- END RESPONSIVE MENU TOGGLER -->            
+            <div class="top-nav">
+             <!-- BEGIN TOP NAVIGATION MENU -->              
+               <ul class="nav pull-right" id="top_menu">
+                <li  styler class="dropdown">
+                  <a href="#" class="dropdown-toggle"  data-toggle="dropdown">
+                  <span style="width:100%;" >Style</span>
+                  <i class="icon-cogs"></i>
+                  </a>
+                    <!-- BEGIN STYLE CUSTOMIZER  -->
+                    <div class="hidden-phone settings"  >
+                       <span class="settings">
+                        <span class="colors">
+                          <span class="color-firm" data-style="firm" title="Firm Compliant"></span>
+                          <span class="color-default" data-style="default"></span>
+                          <span class="color-grey" data-style="grey"></span>
+                          <span class="color-navygrey" data-style="navygrey"></span>                                
+                          <span class="color-red" data-style="red"></span>  
+                        </span>
+                        <!--
+                        <span class="layout">
+                          <label class="checkbox" class="hidden-phone" >
+                            <input type="checkbox" value="" checked>
+                            Sticky Header
+                          </label><br/>
+                          <label class="checkbox">
+                            <input type="checkbox" value="">
+                            Metro Style
+                          </label>
+                        </span>-->
+                       </span>
+                    </div>
+                    <!-- END STYLE CUSTOMIZER-->
+                </li>
+                  <!-- BEGIN CLIENT PICKER DROPDOWN -->
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{{currentClient.label}}">
+                     <i class="icon-briefcase"></i>
+                     <b class="caret"></b>
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li ng-repeat="client in clients" 
+                            ng-class="{active: client.selected}"
+                            ng-click="selectClient(client)" >
+                          <div class="clock" id="clock"></div></li>
+                     </ul>
+                  </li>
+                  <!-- END CLIENT PICKER DROPDOWN -->
+                  <li class="divider-vertical hidden-phone hidden-tablet"></li>
+                  <!-- BEGIN USER LOGIN DROPDOWN -->
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <i class="icon-user"></i>
+                     <b class="caret"></b>
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#"><i class="icon-user"></i> Current User</a></li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                     </ul>
+                  </li>
+                  <!-- END USER LOGIN DROPDOWN -->
+               </ul>
+               <!-- END TOP NAVIGATION MENU --> 
+            </div>
+         </div>
+      </div>
+      <!-- END TOP NAVIGATION BAR -->
+   </div>
+   <!-- END HEADER -->
+
+
+  <div id="container">
+    
+      <div id="body">
+     
+       <form action="javascript:submit()">
+                <input id="queryId" type="hidden"/>
+               
+               <div class="row">
+                
+                <div id="datasets" class="span2" width="200px">
+
+                </div>
+                <div class="span4">
+                    <legend>Date/Time</legend>
+                    
+                    <div>
+                        <div class="input-append">
+                            <label class="label">Start Time:</label>
+                            <input id="startDate" type="text" class="input-medium">
+                        </div>
+                        <div style="clear: both"></div>
+                        <div class="input-append">
+                            <label class="label">End Time:</label>
+                            <input id="endDate" type="text" class="input-medium"/>
+                        </div>
+                        <div class="input-append">
+                          <div class="label"><label>Live Updates:</label></div>
+                          <input id="checkBox_Continuous" name="checkBox_Continuous" type="checkBox"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <legend>Host 1</legend>
+                    <div>
+                        <div class="label">
+                            <label>IP:</label>
+                        </div>
+                        <input id="host1IP" name="host1IP" type="text" class="input-medium"/>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div>
+                        <div class="label">
+                            <label>Port:</label>
+                        </div>
+                        <input id="host1Port" name="host1Port" type="text" class="input-medium"/>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div>
+                    <div class="label"><label>To:</label></div>
+                    <input id="checkBox_Direction_To" name="checkBox_Direction_To" type="checkBox"/>
+                    <div style="clear: both"></div>
+                    <div class="label"><label>From:</label></div>
+                    <input id="checkBox_Direction_From" name="checkBox_Direction_From" type="checkBox"/>
+                    <div style="clear: both"></div>
+                    </div>
+                    
+                </div>
+                
+                <div class="span4">
+                    <legend>Host 2</legend>
+                    <div>
+                        <div class="label">
+                            <label>IP:</label>
+                        </div>
+                        <input id="host2IP" name="host2IP" type="text" class="input-medium"/>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div>
+                        <div class="label">
+                            <label>Port:</label>
+                        </div>
+                        <input id="host2Port" name="host2Port" type="text" class="input-medium"/>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-offset-0 col-lg-offset-2">
+                </div>
+                
+          </div>  <!-- end row  -->
+        </form>
+        
+     <div class="row"> <!-- Second row -->
+         <div>
+             <button id="query" onclick="$('#loading-indicator').toggle();">Query</button>
+             <img src="images/159.GIF" id="loading-indicator" style="display:none" /> 
+             
+			
+        </div>
+        
+     </div> <!--end second row -->
+
+         <div class="row imgback">
+         <div id="data-tabs" class="data-tabs">
+            <ul class="nav nav-tabs" id="myTab"></ul>
+            
+            <div id="tab-holder" class="tab-content bgwhite">
+
+            </div>
+            <button id="exportTable">Export</button>
+        <div>
+        </div>
+        </div> <!-- end third row -->
+       
+       </div>
+       
+    </div> <!-- end container -->
+
+<script src="./client.js"></script>
+<script>
+   <!-- $('#loading-indicator').show(); -->
+</script>
+<br><br><br>
+</body>
+</html>

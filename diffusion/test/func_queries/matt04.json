@@ -1,0 +1,20 @@
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "bool": {
+          "should": [
+            {
+              "query_string": {
+                "query": "(concept.dimensions:\"FIRST ANCESTRY REPORTED\" OR concept.dimensions:\"PEOPLE REPORTING ANCESTRY\") AND geo_summary_level_code:050 AND ( Alameda  OR \"Contra Costa\" OR Marin Napa OR \"San Francisco\"  \"San Mateo\" \"Santa Clara\" Solano OR Sonoma)"
+              
+              }
+            }
+          ]
+        }
+      }
+      
+    }
+  }
+}
+

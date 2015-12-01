@@ -1,0 +1,827 @@
+{
+    "template": "dataset-*",
+    "mappings": {
+        "metadata": {
+            "_index": {
+                "enabled": true
+            }, 
+            "properties": {
+                "cellValue": {
+                    "index": "not_analyzed", 
+                    "type": "string",
+                    "doc_values": true
+                }, 
+                "itemValue": {
+                    "index": "not_analyzed", 
+                    "type": "string",
+                    "doc_values": true
+                }, 
+                "marginOfError": {
+                    "index": "not_analyzed", 
+                    "type": "string",
+                    "doc_values": true
+                }, 
+                "UnitType": {
+                    "index": "not_analyzed", 
+                    "type": "string",
+                    "doc_values": true
+                }, 
+                "concept": {
+                    "analyzer": "standard", 
+                    "fields": {
+                        "dimensions": {
+                            "analyzer": "dim_pattern_analyzer", 
+                            "type": "string"
+                        }, 
+                        "stem": {
+                            "analyzer": "stem_analyzer",
+                            "type": "string"
+                        },
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "topics": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "dataset": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "tableID": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "variableID": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "year": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "uuid": {
+                    "analyzer": "standard",
+                    "fields": {
+                        "pieces": {
+                            "analyzer": "id_pattern_analyzer",
+                            "type": "string"
+                        }
+                    },
+                    "type": "string"
+                },
+                "geoID": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_alaska_native_area_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_american_indian_area_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_cf_name": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_cf_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_county_subdivision_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_county_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_metro_micro_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_native_hawaiian_area_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_place_program_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_place_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_record_canonical_name": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_record_cf_size_sort_order": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_record_cf_sort_order": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_record_cf_spec": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_record_name": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_record_rollup": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_summary_level_code": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_summary_level_name": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_summary_level_short_name": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_urban_area_type": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_aia_ana_rseo": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_aia_ortlo_hhl": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_alaska_native_area": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_american_indian_area": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_block": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_block_group": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_cd113": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_census_tract": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_central_city": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_cnecta": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_consolidated_city": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_county": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_county_subdivision": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_csa": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_division": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_elementary": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_estate": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_housing_survey_area": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_lower_chamber": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_metdiv": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_metro_micro": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_msacmsa": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_native_hawaiian_area": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_ncema": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_necma": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_necta": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_nectadiv": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_place": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_primary_msa": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_puma": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_region": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_secondary": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_state": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_subminor_civil_division": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_taz": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_tribal_block_group": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_tribal_subdivision": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_tribal_tract": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_unified": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_upper_chamber": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_urban_area": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_urban_rural": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_voting_district": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_zip_zcta_3": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "geo_within_zip_zcta_5": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "label": {
+                    "analyzer": "standard", 
+                    "fields": {
+                        "dimensions": {
+                            "analyzer": "dim_pattern_analyzer", 
+                            "type": "string"
+                        }, 
+                        "stem": {
+                            "analyzer": "stem_analyzer",
+                            "type": "string"
+                        },
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                }, 
+                "program": {
+                    "fields": {
+                        "raw": {
+                            "index": "not_analyzed", 
+                            "type": "string",
+                            "doc_values": true
+                        }
+                    }, 
+                    "type": "string"
+                } 
+            },
+            "_source" : {
+                "excludes": [ "geo_within_region",
+                              "geo_cf_name",
+                              "geo_pseudo_geo_ind",
+                              "geo_record_cf_sort_order",
+                              "geo_ansi_code",
+                              "geo_record_cf_size_sort_order",
+                              "geo_pseudo_geo_type",
+                              "geo_code",
+                              "geo_record_rollup",
+                              "geo_year",
+                              "geo_variant_code",
+                              "geo_spec",
+                              "geo_type",
+                              "geo_state_cf_lookahead",
+                              "geoCode",
+                              "geo_cf_type",
+                              "geo_cf_ind",
+                              "geo_record_cf_spec",
+                              "geo_variant_ind",
+                              "geo_within_division",
+                              "geo_summary_level_short_name",
+                              "geo_popular_component",
+                              "geo_lsadc",
+                              "geo_lookahead",
+                              "geo_component_ind" ]
+            }
+        }
+    }
+}

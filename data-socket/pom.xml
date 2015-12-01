@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                        http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  
+  <properties>
+     <tomcat.version>7.0.35</tomcat.version>
+  </properties>
+
+  <parent>
+    <version>0.1-SNAPSHOT</version>
+    <groupId>com.bah.diffusion</groupId>
+    <artifactId>root</artifactId>
+  </parent>
+
+  <artifactId>data-socket</artifactId>
+  <packaging>war</packaging>
+  <name>Cyber4Sight UI Socket Server</name>
+  <description>Cyber4Sight UI Socket Server</description>
+
+  <repositories>
+    <!-- Storm repo -->
+    <repository>
+      <id>clojars.org</id>
+      <url>http://clojars.org/repo</url>
+    </repository>
+    <!-- Javolution repo -->
+    <repository>
+      <id>java.net-Public</id>
+      <name>Maven Java Net Snapshots and Releases</name>
+      <url>https://maven.java.net/content/groups/public/</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <dependencies>
+  <dependency>
+      <groupId>org.javolution</groupId>
+      <artifactId>javolution-core-java</artifactId>
+
+    </dependency>
+    <dependency>
+      <groupId>javax.websocket</groupId>
+      <artifactId>javax.websocket-api</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.tyrus</groupId>
+      <artifactId>tyrus-server</artifactId>
+      <version>1.1</version>
+	  <scope>provided</scope>
+   </dependency>
+   <dependency>
+     <groupId>org.glassfish.tyrus</groupId>
+     <artifactId>tyrus-client</artifactId>
+     <version>1.1</version>
+     <scope>provided</scope>
+   </dependency>
+   <dependency>
+      <groupId>org.glassfish.tyrus</groupId>
+      <artifactId>tyrus-container-grizzly</artifactId>
+      <version>1.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-client</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>slf4j-log4j12</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- used in LocalCluster tests -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.accumulo</groupId>
+      <artifactId>accumulo-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.accumulo</groupId>
+      <artifactId>accumulo-fate</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.accumulo</groupId>
+      <artifactId>accumulo-trace</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>data</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <!-- <version>${maven.compiler.plugin}</version> -->
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+      <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+            </configuration>
+      </plugin>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>2.1.1</version>
+          <configuration>
+              <warName>data</warName> 
+          </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

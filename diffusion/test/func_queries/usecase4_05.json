@@ -1,0 +1,19 @@
+{
+    "query": {
+        "filtered": {
+            "filter": {
+                "term": {
+                    "label": "plumbers"
+                }
+            }
+        }
+    },
+    "aggs" : {
+        "outer" : {
+            "terms" : {
+                "field" : "dataset.raw",
+                "size" : 0
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.rowEdit {
+	width: 650px;
+
+}
+
+.rowEdit .modal-header {
+	text-align: center;
+}
+
+.rowEdit .modal-body {
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.rowEdit .modal-body textarea { 
+	resize:vertical; 
+}
+

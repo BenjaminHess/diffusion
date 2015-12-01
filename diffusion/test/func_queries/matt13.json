@@ -1,0 +1,41 @@
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "bool": {
+          "should": [
+            {
+              "query_string": {
+                "query": "concept.dimensions:\"total population\" AND geo_within_state:\"New York\" AND geo_summary_level_code:050"
+              }
+            }
+          ]
+        }
+      },
+      "filter": {
+        "bool": {
+          "must": [
+            {
+              "terms": {
+                "dataset.raw": [
+                  "ACS 3-Year Summary File 2010-2012"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "highlight": {
+    "fields": {},
+    "fragment_size": 2147483647,
+    "pre_tags": [
+      "@start-highlight@"
+    ],
+    "post_tags": [
+      "@end-highlight@"
+    ]
+  },
+  "size": 500
+}

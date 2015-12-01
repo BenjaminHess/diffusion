@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diffusion Search | Results</title>
+	<link type="text/css" rel="stylesheet" href="dsearch.css"/>
+	<link type="text/css" rel="stylesheet" href="opentip.css"/>
+	<script type="application/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="application/javascript" src="js/d3.min.js"></script>
+	<script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script>
+	<script type="application/javascript" src="js/topojson.js"></script>
+	<script type="application/javascript" src="js/datamaps.usa.min.js"></script>
+	<script type="application/javascript" src="js/interact-1.2.2.min.js"></script>
+	<script type="application/javascript" src="js/opentip-jquery.min.js"></script>
+	<script type="application/javascript" src="js/map.js"></script>
+	<script type="application/javascript" src="js/func.js"></script>
+	<script type="application/javascript" src="js/search.js"></script>
+</head>
+<body>
+<header>
+	<div id="logo">Census Data Search</div>
+</header>
+<ul class="upper" id="navigation">
+	<li class="currentPage"><a href="search.html">Faceted Search</a></li>
+	<li><a href="vsearch.html">Faceted + Visualized Search</a></li>
+	<li><a href="fgsearch.html">Force Graph Search</a></li>
+</ul>
+<div id="main">
+	<div id="sidebar" class="resize">
+		<div class="cyanTitle">Refine Search:</div>
+	</div>
+	<div id="results">
+		<form id="intro-form" action="search.html">
+			<div id="input-search">
+				<div class="input-searchType"><label for="input-keyword" class="blueTitle">Search Results for:</label><br/><input type="text" name="keyword" id="input-keyword" placeholder="keywords"/></div>
+				<div class="input-searchType"><label for="input-location" class="blueTitle">Location:</label><br/><input type="text" name="location" id="input-location" placeholder="city, state or zip"/></div>
+				<button type="submit" id="input-searchButton">SEARCH</button>
+				<button type="button" id="input-saveButton">SAVE</button>
+			</div>
+		</form>
+		<div class="blueSubTitle" id="results-showing">Showing <span id="results-current">0-0</span> of <span id="results-total">0</span></div>
+		<div id="results-body">
+			<div class="results-module">
+				<div class="upper moduleHeader"><span class="icon open">&#9662;</span>Search Results</div>
+				<div class="results-moduleBody defaultView">
+					<div class="loadingDiv"><img src="img/loading1.gif"/></div>
+				</div>
+			</div>
+		</div>
+		<div class="results-moduleHeader"></div>
+		<ul class="results-pagination">
+			<li class="upper prev"></li>
+			<li class="upper next"></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

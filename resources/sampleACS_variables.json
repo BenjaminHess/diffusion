@@ -1,0 +1,54 @@
+{
+  "variables": {
+    "C08513_012E": {
+      "label": "Car, truck, or van - carpooled:!!Speak only English",
+      "concept": "C08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY",
+      "predicateType": "int"
+    },
+    "C08513_010E": {
+      "label": "Car, truck, or van - drove alone:!!Speak language other than English:!!Speak English less than \"very well\"",
+      "concept": "C08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY",
+      "predicateType": "int"
+    },
+    "B25087_019E": {
+      "label": "Housing units without a mortgage:!!Less than $100",
+      "concept": "B25087.  Mortgage Status and Selected Monthly Owner Costs for Owner-Occupied Housing Units",
+      "predicateType": "int"
+    },
+    "B27014_038E": {
+      "label": "Did not work:!!Male:!!65 years and over:!!With public coverage",
+      "concept": "B27014.  Public Health Insurance by Work Experience by Sex by Age",
+      "predicateType": "int"
+    },
+        "C08513_012M": {
+      "label": "Margin of Error for!!Car, truck, or van - carpooled:!!Speak only English",
+      "concept": "C08513.  MEANS OF TRANSPORTATION TO WORK BY LANGUAGE SPOKEN AT HOME AND ABILITY TO SPEAK ENGLISH FOR WORKPLACE GEOGRAPHY",
+      "predicateType": "int"
+    },
+    "B20001_017E": {
+      "label": "Male:!!$45,000 to $49,999",
+      "concept": "B20001.  Sex by Earnings for the Population 16+ Years  With Earnings",
+      "predicateType": "int"
+    },
+    "B19056_002E": {
+      "label": "With Supplemental Security Income (SSI)",
+      "concept": "B19056.  Supplemental Security Income (SSI) for Households",
+      "predicateType": "int"
+    },
+    "B25087_019E": {
+      "label": "Housing units without a mortgage:!!Less than $100",
+      "concept": "B25087.  Mortgage Status and Selected Monthly Owner Costs for Owner-Occupied Housing Units",
+      "predicateType": "int"
+    },
+    "B19056_001M": {
+      "label": "Margin of Error for!!Total:",
+      "concept": "B19056.  Supplemental Security Income (SSI) for Households",
+      "predicateType": "int"
+    },
+    "B25032C_006M": {
+      "label": "Margin of Error for!!5 to 9",
+      "concept": "B25032C.  UNITS IN STRUCTURE (AMERICAN INDIAN AND ALASKA NATIVE ALONE HOUSEHOLDER)",
+      "predicateType": "int"
+    }
+   }
+}

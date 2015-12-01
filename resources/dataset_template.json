@@ -1,0 +1,97 @@
+{
+    "template": "dataset-*",
+    "settings": {
+        "number_of_shards": 1
+    },
+    "mappings": {
+        "metadata": {
+            "_index": {
+                "enabled": true
+            },
+            "properties": {
+                "NAME": {
+                    "fields": {
+                        "NAME": {
+                            "analyzer": "standard",
+                            "index": "analyzed",
+                            "type": "string"
+                        },
+                        "raw": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        }
+                    },
+                    "type": "multi_field"
+                },
+                "URL": {
+                    "index": "not_analyzed",
+                    "type": "string"
+                },
+                "accumuloId": {
+                    "type": "string"
+                },
+                "concept": {
+                    "analyzer": "standard",
+                    "fields": {
+                        "dimensions": {
+                            "analyzer": "dim_pattern_analyzer",
+                            "type": "string"
+                        },
+                        "ngrams": {
+                            "analyzer": "ngram_analyzer",
+                            "type": "string"
+                        },
+                        "raw": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        },
+                        "shingles": {
+                            "analyzer": "shingle_analyzer",
+                            "type": "string"
+                        }
+                    },
+                    "type": "string"
+                },
+                "county": {
+                    "type": "string"
+                },
+                "label": {
+                    "analyzer": "standard",
+                    "fields": {
+                        "dimensions": {
+                            "analyzer": "dim_pattern_analyzer",
+                            "type": "string"
+                        },
+                        "ngrams": {
+                            "analyzer": "ngram_analyzer",
+                            "type": "string"
+                        },
+                        "raw": {
+                            "index": "not_analyzed",
+                            "type": "string"
+                        },
+                        "shingles": {
+                            "analyzer": "shingle_analyzer",
+                            "type": "string"
+                        }
+                    },
+                    "type": "string"
+                },
+                "predicateType": {
+                    "index": "no",
+                    "type": "string"
+                },
+                "required": {
+                    "index": "no",
+                    "type": "boolean"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

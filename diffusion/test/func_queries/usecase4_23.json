@@ -1,0 +1,34 @@
+{
+    "query": {
+        "filtered": {
+            "filter": {
+                "bool": {
+                    "must": {
+                        "term": {
+                            "naicsID": 238220
+                        }
+                    },
+                    "should": {
+                        "term": {
+                            "geo_state": 11
+                        },
+                        "term": {
+                            "geo_state": 24
+                        },
+                        "term": {
+                            "geo_state": 51
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "aggs": {
+        "outer": {
+            "terms" : {
+                "field" : "cellValue",
+                "size" : 0
+            }
+        }
+    }
+}

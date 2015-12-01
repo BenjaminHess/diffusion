@@ -1,0 +1,68 @@
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "bool": {
+          "should": [
+            {
+              "query_string": {
+                "query": "Language Spoken at Home AND seattle"
+              }
+            }
+          ]
+        }
+      },
+      "filter": {
+        "bool": {
+          "must_not": [
+            {
+              "fquery": {
+                "query": {
+                  "query_string": {
+                    "query": "label.dimensions:(\"Margin of Error for\")"
+                  }
+                },
+                "_cache": true
+              }
+            }
+          ],
+          "must": [
+            {
+              "terms": {
+                "concept.dimensions": [
+                  "language spoken at home"
+                ]
+              }
+            },
+            {
+              "terms": {
+                "geo_record_canonical_name.raw": [
+                  "Seattle city, Washington"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "highlight": {
+    "fields": {},
+    "fragment_size": 2147483647,
+    "pre_tags": [
+      "@start-highlight@"
+    ],
+    "post_tags": [
+      "@end-highlight@"
+    ]
+  },
+  "size": 500,
+  "sort": [
+    {
+      "": {
+        "order": "desc",
+        "ignore_unmapped": true
+      }
+    }
+  ]
+}

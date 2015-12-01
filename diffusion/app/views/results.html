@@ -1,0 +1,154 @@
+<div class='row'>
+    <div class='col-md-3'>
+        <div class='row'>
+            {{rootScope.selected}}
+            <div class='col-md-12'>
+                <h3>Filter by Tags</h3>
+                <span class="text-muted">Results listed decending by number of results.</span>
+                <accordion ng-init='concept.open = true'>
+                    <accordion-group is-open="location.open">
+                        <accordion-heading>
+                            Location <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': location.open, 'glyphicon-chevron-right': !location.open}"></i>
+                        </accordion-heading>
+                        <label ng-repeat="item in locationList">
+                            <input type="checkbox" checklist-model="selected.locationList" checklist-value="item" /> &nbsp;{{item.term |capitalize:true}}&nbsp;
+                            <a>({{item.count}})&nbsp;</a>
+                        </label>
+                        <br>
+                        <button class='btn btn-xs btn-success' ng-click='checkAll("locationList");'>Select All</button>
+                        <button class='btn btn-xs btn-danger' ng-click='uncheckAll("locationList");'>Clear All</button>
+                    </accordion-group>
+                    <accordion-group is-open="concept.open">
+                        <accordion-heading>
+                            Concepts <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': concept.open, 'glyphicon-chevron-right': !concept.open}"></i>
+                        </accordion-heading>
+
+                        <div ng-repeat='(key,value) in predefinedConcepts'>
+                            <h3>{{key}}</h3>
+                            <label ng-repeat="item in value">
+                                <input type="checkbox" checklist-model="selected.conceptList" checklist-value="item" /> &nbsp;{{item |capitalize:true}}&nbsp;&nbsp;
+                            </label>
+                        </div>
+                        <br>
+                        <div class='row'>
+                            <div class='col-xs-4'>
+                                <button class='btn btn-xs btn-success center-block' ng-click='checkAll("conceptList");'>Select All</button>
+                            </div>
+                            <div class='col-xs-4'>
+                                <button class='btn btn-xs btn-danger center-block' ng-click='uncheckAll("conceptList");'>Clear All</button>
+                            </div>
+                            <div class='col-xs-4'>
+                                <button class='btn btn-xs btn-info center-block' ng-click='fullconceptlist=!fullconceptlist;'>Toggle All</button>
+                            </div>
+                        </div>
+                        <hr>
+                        <label ng-repeat="item in conceptList" ng-show='fullconceptlist'>
+                            <input type="checkbox" checklist-model="selected.conceptList" checklist-value="item" />&nbsp;{{item.term |capitalize:true}}&nbsp;
+                            <a>({{item.count}})&nbsp;</a>
+                        </label>
+
+
+                    </accordion-group>
+                    <accordion-group is-open="label.open">
+                        <accordion-heading>
+                            Labels <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': label.open, 'glyphicon-chevron-right': !label.open}"></i>
+                        </accordion-heading>
+                        <label ng-repeat="item in labelList">
+                            <input type="checkbox" checklist-model="selected.labelList" checklist-value="item" /> &nbsp;{{item.term |capitalize:true}}&nbsp;
+                            <a>({{item.count}})&nbsp;</a>
+                        </label>
+                        <br>
+                        <button class='btn btn-xs btn-success pull-left' ng-click='checkAll("labelList");'>Select All</button>
+                        <button class='btn btn-xs btn-danger pull-right' ng-click='uncheckAll("labelList");'>Clear All</button>
+                    </accordion-group>
+                </accordion>
+            </div>
+        </div>
+    </div>
+    <div class='col-md-9'>
+        <div class='row text-center'>
+            <div class='col-xs-4'>
+                <label for="keyword">Enter a Keyword:</label>
+                <input type="text" class="form-control" id="keyword" name='keyword' ng-model='keyword' placeholder='Search by Keywords' />
+            </div>
+            <div class='col-xs-4'>
+                <label for="Location">Enter a Location:</label>
+                <input type="location" class="form-control" id="location" name='location' ng-model='location' placeholder='Search by City, State or Zip' />
+            </div>
+            <div class='col-xs-2'>
+                <a ng-href="#/results/keyword={{keyword}}&location={{location}}&offset=0">
+                    <button class="btn btn-success btn-md centerbutton"><span class='glyphicon glyphicon-search'></span> Search</button>
+                </a>
+            </div>
+            <div class='col-xs-2'>
+                <pagedownload data='sourceArray'></pagedownload>
+            </div>
+        </div>
+        <br>
+        <p class="text-muted">Showing {{offset == 0 ? "1" : offset}}-{{offset25}} of {{resultCount}} - This query took {{lapsedTime}} miliseconds</p>
+        <hr>
+        <div class='row'>
+            <div class='col-sm-6'>
+                <h3>Group by:</h3>
+                <select ng-model="groupby" class="form-control">
+                    <option value="label">Description</option>
+                    <option value="NAME">Location</option>
+                    <option value="concept">Concept</option>
+                </select>
+            </div>
+            <div class='col-sm-6'>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <table ng-table='tableParams' class='table table-hover table-condensed'>
+                    <tbody ng-repeat="group in $groups">
+                        <tr class="ng-table-group">
+                            <td colspan="{{$columns.length}}">
+                                <a href="" ng-click="group.$hideRows = !group.$hideRows">
+                                    <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
+                                    <strong>{{ group.value }}</strong>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr ng-hide="group.$hideRows" ng-repeat="item in group.data">
+
+                            <td data-title="'Concept'" sortable="'concept'">
+                                {{item.concept}}
+                            </td>
+
+                            <td data-title="'Description'" sortable="'label'">
+                                {{item.label}}
+                            </td>
+                            <td data-title="'Location'" sortable="'NAME'">
+                                {{item.NAME}}
+                            </td>
+                            <td data-title="'Quantity'" sortable="'value'">
+                                {{item.value}}
+                            </td>
+                            <td data-title="'Action'">
+                                <a popover-trigger="mouseenter" popover-placement="right" popover="<b>Margin of Error: </b> 2%<br/><b>Survey:</b> American Community Survey 1 year estimates<br/><b>Year:</b> 2013<br/><b>Accumulo ID:</b> {{item.accumuloId}} ">Details</a> |
+                                <download queryId={{item.accumuloId}}></download>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+        <div class='row'>
+            <hr>
+            <div class='col-xs-6'>
+                <!--                <a ng-show='offset >= 25' ng-href="#/results/keyword={{keyword}}&location={{location}}&offset={{offset}}">-->
+                <a ng-show='offset >= 25'>
+                    <button class='btn btn-sm pull-left' ng-click='offset=offset-25;'>Previous 25 Results</button>
+                </a>
+            </div>
+            <div class='col-xs-6'>
+                <!--                <a ng-href="#/results/keyword={{keyword}}&location={{location}}&offset={{offset}}">-->
+                <a>
+                    <button class='btn btn-sm pull-right' ng-click='offset=offset+25;'>Next 25 Results</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>

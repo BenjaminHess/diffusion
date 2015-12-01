@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  id="WebApp_ID" version="2.5">
+  <display-name>Cyber4Sight REST Services</display-name>
+  
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Protected resource</web-resource-name>
+      <url-pattern>/*</url-pattern>
+      <http-method>GETLIB</http-method>
+      <http-method>COPY</http-method>
+      <http-method>MOVE</http-method>
+      <http-method>DELETE</http-method>
+      <http-method>PROPFIND</http-method>
+      <http-method>GET</http-method>
+      <http-method>HEAD</http-method>
+      <http-method>PUT</http-method>
+      <http-method>MKCOL</http-method>
+      <http-method>PROPPATCH</http-method>
+      <http-method>LOCK</http-method>
+      <http-method>UNLOCK</http-method>
+      <http-method>VERSION-CONTROL</http-method>
+      <http-method>CHECKIN</http-method>
+      <http-method>CHECKOUT</http-method>
+      <http-method>UNCHECKOUT</http-method>
+      <http-method>REPORT</http-method>
+      <http-method>UPDATE</http-method>
+      <http-method>CANCELUPLOAD</http-method>
+    </web-resource-collection>
+
+    <auth-constraint>
+      <role-name>cyberng-user</role-name>
+    </auth-constraint>
+    
+    <!-- https -->
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  
+  <security-role>
+    <role-name>cyberng-user</role-name>
+  </security-role>
+    
+  <login-config>
+    <auth-method>DIGEST</auth-method>
+    <realm-name>Digest</realm-name>
+  </login-config>
+</web-app> 
